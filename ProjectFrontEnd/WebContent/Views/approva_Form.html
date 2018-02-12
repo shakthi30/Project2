@@ -1,0 +1,29 @@
+<h2>Approval Form</h2>
+<h3>{{blog.blogTitle}}</h3>
+<br>
+AUTHOR: {{blog.postedBy.user_firstName}}
+<br>
+Created On: {{blog.postedOn | date: 'yyyy.MM.dd'}}
+<br>
+<div class="panel-body">
+	{{blog.blogContent}}
+	<form>
+		<input type="radio" ng-model="blog.approved" ng-value="true"
+			id="approved">Approved <input type="radio"
+			ng-model="blog.approved" ng-value="false" id="rejected">Rejected
+		<input type="text" ng-model="rejectionReason" id="text"> <input
+			type="submit" value="Send" ng-click="updateBlog()">
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#approved').click(function() {
+					$('#text').hide();
+				});
+				$('#rejected').click(function() {
+					$('#text').show();
+				});
+			});
+		</script>
+
+	</form>
+</div>
+

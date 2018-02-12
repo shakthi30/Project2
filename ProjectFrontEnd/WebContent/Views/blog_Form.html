@@ -1,0 +1,14 @@
+{{error}} {{success}}
+<center>
+	<h4>Write new blog post</h4>
+</center>
+<form role="form">
+	<div class="form-group">
+		<b>BlogTitle:</b> <input type="text" ng-model="blog.blogTitle">
+		<br>
+		<br> <b>Content</b>
+		<textarea class="form-control" rows="3" required
+			ng-model="blog.blogContent"></textarea>
+	</div>
+	<button type="submit" class="btn btn-success" ng-click="saveBlog()">Submit</button>
+</form>

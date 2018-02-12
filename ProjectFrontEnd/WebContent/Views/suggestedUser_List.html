@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div ng-repeat="user in suggestedUsers">
+			<table class="table table-striped">
+
+				<tr>
+					<td>{{user.user_Name}}</td>
+					<td><a href="" class="btn btn-primary"
+						ng-click="addFriend(user.user_Name)">Send Friend Request</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

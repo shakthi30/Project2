@@ -1,0 +1,45 @@
+<table class="table table-striped">
+	<tr>
+		<td>JOB TITLE</td>
+		<td>SKILLS REQUIRED</td>
+		<td>POSTED ON</td>
+	</tr>
+	<tr ng-repeat="job in jobs">
+		<td><a href="" ng-click="getJob(job.id)">{{job.jobTitle}}</a></td>
+		<td>{{job.skillsRequired}}</td>
+		<td>{{job.postedOn | date:"dd.MM.yyyy"}}</td>
+	</tr>
+</table>
+<div ng-show="value">
+	<center>JOB DETAILS</center>
+	<table class="table table-striped">
+		<tr>
+			<td>JOB TITLE</td>
+			<td>{{job.jobTitle}}</td>
+		</tr>
+		<tr>
+			<td>JOB DESCRIPTION</td>
+			<td>{{job.jobDescription}}</td>
+		</tr>
+		<tr>
+			<td>SKILLS REQUIRED</td>
+			<td>{{job.skillsRequired}}</td>
+		</tr>
+		<tr>
+			<td>LOCATION</td>
+			<td>{{job.location}}</td>
+		</tr>
+		<tr>
+			<td>COMPANY NAME</td>
+			<td>{{job.companyName}}</td>
+		</tr>
+		<tr>
+			<td>SALARY</td>
+			<td>{{job.Salary | number}}</td>
+		</tr>
+		<tr>
+			<td>EXPERIENCE</td>
+			<td>{{job.yrsOfExp}}</td>
+		</tr>
+	</table>
+</div>

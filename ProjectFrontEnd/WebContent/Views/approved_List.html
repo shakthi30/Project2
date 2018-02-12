@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3>{{blog.blogTitle}}</h3>
+			<br> AUTHOR: {{blog.postedBy.user_firstName}}<br> Created
+			On: {{blog.postedOn | date: 'yyyy.MM.dd'}}<br>
+		</div>
+		<div class="panel-body">{{blog.blogContent}}</div>
+		<div class="panel-footer">
+			Likes{{likes}}
+			<div ng-show="liked">
+				<button>
+					<span class="glyphicon glyphicon-thumbs-up" style="color: blue"
+						ng-click="updateLike()">liked</span>
+				</button>
+			</div>
+			<div ng-show="!liked">
+				<button>
+					<span class="glyphicon glyphicon-thumbs-up" style="color: black"
+						ng-click="updateLike()">like</span>
+				</button>
+			</div>
+
+
+
+			Comments
+			<ul>
+				<li ng-repeat="comment in comments | orderBy : 'commentedOn'">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							{{comment.commentText}}
+							<div>
+								<b>by :</b>{{comment.commentedBy.user_firstName}} <b>On :</b>{{comment.commentedOn
+								| date : 'medium'}}
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div>
+				<textarea rows="3" cols="40" ng-model="blogComment.commentText"></textarea>
+			</div>
+			<button class="btn btn-primary" value="Post Comment"
+				ng-click="addComment()">POST COMMENT</button>
+		</div>
+	</div>
+</div>

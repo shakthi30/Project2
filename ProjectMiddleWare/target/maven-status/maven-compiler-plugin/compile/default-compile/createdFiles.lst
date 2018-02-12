@@ -1,0 +1,6 @@
+com\niit\restController\NotificationController.class
+com\niit\restController\SockController.class
+com\niit\restController\BlogController.class
+com\niit\restController\JobController.class
+com\niit\restController\UserController.class
+com\niit\restController\FriendController.class

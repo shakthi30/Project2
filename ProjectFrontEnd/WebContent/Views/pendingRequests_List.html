@@ -1,0 +1,13 @@
+<div ng-repeat="requests in pendingRequests">
+	<table class="table table-striped">
+		<tr>
+			<td>{{requests.fromId}}</td>
+			<td><button class="btn btn-primary"
+					ng-click="accept(requests.id)">Accept</button></td>
+			<td><button class="btn btn-danger"
+					ng-click="deleteReq(requests.id)">Delete Request</button></td>
+
+		</tr>
+	</table>
+
+</div>
