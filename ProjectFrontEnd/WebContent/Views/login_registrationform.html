@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+body {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+	<center>
+		<h1>Your Details here..</h1>
+	</center>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<form>
+							<div class="form-group">
+								<label for="username">Enter UserName :</label> <input
+									type="text" class="form-control" id="username"
+									placeholder="Enter username" ng-model="user.user_Name">
+							</div>
+							<div class="form-group">
+								<label for="pwd">Enter password :</label> <input type="password"
+									class="form-control" id="pwd" placeholder="Enter password"
+									ng-model="user.use_password">
+							</div>
+							<div class="form-group">
+								<label for="name">Enter first Name</label> <input type="text"
+									class="form-control" id="name" placeholder="Enter first name"
+									ng-model="user.user_firstName">
+							</div>
+							<div class="form-group">
+								<label for="lastname">Enter last name</label> <input type="text"
+									class="form-control" id="lastname"
+									placeholder="Enter last name" ng-model="user.user_lastName">
+							</div>
+							<div class="form-group">
+								<label for="email">Enter Email</label> <input type="text"
+									class="form-control" id="email" placeholder="Enter email"
+									ng-model="user.user_email">
+							</div>
+							<div class="form-group">
+								<label for="phone">Enter Phone number</label> <input type="text"
+									class="form-control" id="phone"
+									placeholder="Enter phone number"
+									ng-model="user.user_phoneNumber">
+							</div>
+							<div class="form-group">
+
+
+								<label> <input class="form-control" id="student"
+									type="radio" value="STUDENT" ng-model="user.user_role">
+									Student
+								</label> <label><input class="form-control" id="role"
+									type="radio" value="EMPLOYEE" ng-model="user.user_role">
+									Employee</label> <label><input class="form-control" id="role"
+									type="radio" value="ALUMNI" ng-model="user.user_role">
+									Alumni</label>
+
+							</div>
+							<button type="submit" class="btn btn-info"
+								ng-click="registerUser()">Register</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

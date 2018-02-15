@@ -1,0 +1,125 @@
+<html>
+<head>
+<style>
+#item1, #item2 {
+	margin-left: 15px;
+	margin-top: 15px;
+	background-color: black;
+	font-size: 15px;
+}
+
+span {
+	color: black;
+}
+
+#id {
+	background:
+		url(images/elegant-grey-illumination-background-presentations-powerpoint-backgrounds.jpg);
+	padding: 50px;
+	border: 1px;
+	height: 500px;
+}
+
+body {
+	background-color: black;
+}
+
+.navbar {
+	min-height: 55px;
+	box-shadow: 0 1px 6px rgba(57, 73, 76, .35);
+}
+
+.panel {
+	box-shadow: -2px 10px 60px;
+}
+</style>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-brand">Chaturn</div>
+		</div>
+	</nav>
+	<div id="id">
+
+		<div class="row">
+			<div class="col-md-4">
+				<br> <br>
+			</div>
+
+			<div class="col-md-4">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<form>
+							<div class="form-group">
+								<label for="username">Username:</label> <input type="text"
+									class="form-control" id="username" placeholder="Enter username"
+									ng-model=user.user_Name>
+							</div>
+							<div class="form-group">
+								<label for="pwd">Password:</label> <input type="password"
+									class="form-control" id="pwd" placeholder="Enter password"
+									ng-model=user.use_password>
+							</div>
+
+							<button type="submit" class="btn btn-default" ng-click="login()">Sign
+								in</button>
+							<span> Don't have an account? <a
+								ng-show="!username.user_Name" href="#/register">Sign up
+									here!</a></span>
+						</form>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-md-4">
+				<br> <br>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div class="container-fluid text-center"
+		style="background-color: white";>
+		<div class="row">
+			<div class="col-md-4 well" id="item1">
+				<div class="well">
+					<img alt="not available"
+						ng-src="images/blog-logo-animated-ws_425x202.gif" width="100%"
+						height="100%">
+
+				</div>
+				<span class="label label-info">Write your own blogs</span> &nbsp <span
+					class="label label-info">Comment </span> &nbsp <span
+					class="label label-info">Like</span>
+			</div>
+			<div class="col-md-4 well" id="item2">
+				<div class="well">
+					<img alt="not available" ng-src="images/tenor.gif" width="48%"
+						height="200%">
+
+				</div>
+				<span class="label label-danger">Make friends</span> &nbsp <span
+					class="label label-danger">live together </span> &nbsp <span
+					class="label label-danger">Chat until you live</span>
+			</div>
+
+			<div class="col-md-3 well" id="item2">
+				<div class="well">
+					<img alt="not available"
+						ng-src="images/tumblr_oem6iwAxSx1r68r7jo1_1280.gif" width="92%"
+						height="80%">
+
+				</div>
+				<span class="label label-info">Find suitable jobs</span> &nbsp <span
+					class="label label-info">Experiment your skills</span> &nbsp
+
+			</div>
+		</div>
+	</div>
+</body>
+<hr>
+</html>

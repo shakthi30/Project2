@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	overflow-x: hidden;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Chaturn</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div ng-app="App">
+
+		<nav ng-show="username.user_Name" class="navbar navbar-inverse">
+			<div class="container-fluid">
+
+				<ul class="nav navbar-nav">
+					<li><a href="#/home" ng-show="username.user_Name"><b>Welcome
+								{{username.user_Name}}</b></a></li>
+
+
+
+					<li class="dropdown"><a class="dropdown-toggle"
+						ng-show="username.user_Name" data-toggle="dropdown" href="">JOBS</a>
+						<ul class="dropdown-menu">
+							<li ng-show="username.user_role == 'ADMIN'"><a
+								href="#/addJobs">Add a new job</a></li>
+							<li><a href="#/viewJobs">View jobs</a></li>
+						</ul></li>
+
+					<li class="dropdown"><a class="dropdown-toggle"
+						ng-show="username.user_Name" data-toggle="dropdown" href="">BLOGS</a>
+						<ul class="dropdown-menu">
+							<li><a href="#/addBlog">Add Blog Post</a></li>
+							<li><a href="#/getBlogs">View Blogs</a></li>
+						</ul></li>
+
+					<li class="dropdown"><a class="dropdown-toggle"
+						ng-show="username.user_Name" data-toggle="dropdown" href=""
+						ng-click="clearNotification()"><span
+							class="glyphicon glyphicon-globe"></span><span
+							style="background-color: red;" ng-if="notificationLength>0"height:20px;
+width:20px;
+color:white;
+padding-top: 1px;
+padding-right: 2px;
+padding-bottom: 1px;
+padding-left: 2px;
+border-radius: 25px;">{{notificationLength}}</span></a>
+
+
+						<ul class="dropdown-menu" ng-show="username.user_Name">
+							<li ng-if="notificationLength==0">No new Notifications</li>
+							<li ng-repeat="notification in notificationNotViewed"
+								style="background-color: #F0F8FF;"><a href=""
+								ng-click="updateNotification(notification.id)">{{notification.blogTitle}}
+									is {{notification.approvalStatus}}
+									{{notification.rejectionReason}}</a></li>
+							<li ng-repeat="notifications in notificationViewed">{{notifications.blogTitle}}
+								is {{notifications.approvalStatus}}
+								{{notifications.rejectionReason}}</li>
+						</ul></li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="" ng-show="username.user_Name">Friend</a>
+						<ul class="dropdown-menu">
+							<li><a href="#/friendsList">Friends</a></li>
+							<li><a href="#/suggestedUsers">Suggested Users</a></li>
+							<li><a href="#/pendingRequests">Pending Requests</a></li>
+						</ul></li>
+
+					<li><a href="#/chat" ng-show="username.user_Name">chat</a></li>
+
+					<li><a href="" ng-click="logout()"
+						ng-show="username.user_Name">Log out</a></li>
+				</ul>
+
+			</div>
+		</nav>
+
+
+		<div ng-view></div>
+	</div>
+
+
+</body>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+<script type="text/javascript" src="module/app.js"></script>
+<script type="text/javascript" src="js/sockjs/sockjs.js"></script>
+<script type="text/javascript" src="Controller/ChatController.js"></script>
+<script type="text/javascript" src="Services/chatService.js"></script>
+<script type="text/javascript" src="js/stomp/dist/stomp.js"></script>
+<script type="text/javascript" src="Controller/LoginController.js"></script>
+<script type="text/javascript" src="Controller/JobsController.js"></script>
+<script type="text/javascript" src="Controller/BlogController.js"></script>
+<script type="text/javascript" src="Controller/FriendsController.js"></script>
+<script type="text/javascript" src="Controller/HomeController.js"></script>
+<script type="text/javascript" src="Services/LoginService.js""></script>
+<script type="text/javascript" src="Services/JobService.js"></script>
+<script type="text/javascript" src="Services/FriendService.js"></script>
+<script type="text/javascript" src="Services/HomeService.js"></script>
+<script type="text/javascript" src="Services/BlogService.js"></script>
+</html>

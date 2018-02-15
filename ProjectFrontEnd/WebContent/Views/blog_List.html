@@ -1,0 +1,49 @@
+<html>
+<style>
+#items
+{
+  background-color: black;
+ 
+}
+body
+{
+  background-color: black;
+}
+</style>
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<h1>Blogs</h1>
+		</div>
+
+		<table class="table table-striped"
+			ng-show="username.user_role == 'ADMIN'">
+			<tr>WAITING FOR APPROVAL
+			</tr>
+			<tr>
+				<td>BLOG TITLE</td>
+				<td>AUTHOR</td>
+				<td>POSTED ON</td>
+			</tr>
+			<tr ng-repeat="blog in blogsWaiting">
+				<td><a href="#/admin/getBlog/{{blog.id}}">{{blog.blogTitle}}</a></td>
+				<td>{{blog.postedBy.user_firstName}}</td>
+				<td>{{blog.postedOn | date : dd.MM.yyy}}</td>
+			</tr>
+		</table>
+		<div class="container-fluid text-center">
+			<div class="row">
+				<div class="col-md-3 well" ng-repeat="blog in blogsApproved"
+					id="items">
+					<div class="well">
+						<span class="glyphicon glyphicon-user"></span> <br> <a
+							href="#/getBlog/{{blog.id}}">{{blog.blogTitle}}</a><br> by
+						{{blog.postedBy.user_firstName}}<br> on {{blog.postedOn |
+						date : dd.MM.yyy}}
+					</div>
+				</div>
+
+			</div>
+		</div>
+</body>
+</html>

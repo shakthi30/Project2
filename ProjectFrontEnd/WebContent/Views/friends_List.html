@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+h2 {
+	color: white;
+	font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+	<h2>
+		Your Friends <span class="glyphicon glyphicon-user"></span>
+	</h2>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12" ng-repeat="friend in friends">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<img ng-src="images/default.png" style="width: 60px">
+						{{friend.user_firstName}} {{friend.user_lastName}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

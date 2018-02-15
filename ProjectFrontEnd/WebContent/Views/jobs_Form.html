@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+body {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+	<center>
+		<h1>Hiring for...</h1>
+	</center>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<table class="table table-striped">
+
+							<tr>
+								<td>Job Title:</td>
+								<td><input type="text" ng-model="job.jobTitle"></td>
+							</tr>
+							<tr>
+								<td>Job Description:</td>
+								<td><textarea rows="3" cols="16"
+										ng-model="job.jobDescription"></textarea></td>
+							</tr>
+							<tr>
+								<td>Skils Required:</td>
+								<td><input type="text" ng-model="job.skillRequired"></td>
+							</tr>
+							<tr>
+								<td>Location:</td>
+								<td><input type="text" ng-model="job.location"></td>
+							</tr>
+							<tr>
+								<td>Company Name:</td>
+								<td><input type="text" ng-model="job.companyName"></td>
+							</tr>
+							<tr>
+								<td>Salary:</td>
+								<td><input type="number" ng-model="job.salary"></td>
+							</tr>
+							<tr>
+								<td>Years of experience:</td>
+								<td><input type="text" ng-model="job.yrsOfExp"></td>
+							</tr>
+							<tr>
+								<td><button class="btn btn-info" ng-click="addJob()">Add
+										Information</button></td>
+							</tr>
+						</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

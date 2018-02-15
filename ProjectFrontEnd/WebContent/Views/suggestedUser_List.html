@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+h1 {
+	text-align: center;
+}
+
+#suggest {
+	background-color: #F5F5F5;
+	font-variant: small-caps;
+}
+
+#list {
+	background-color: white;
+}
+
+body {
+	background-color: black;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-3"></div>
+		<div class="col-md-6" id="list">
+			<div id="suggest">
+				<center>Suggested Friends</center>
+			</div>
+
+			<div class="media" ng-repeat="user in suggestedUsers">
+				<div class="media-left">
+					<img ng-src="images/default.png" class="media-object"
+						style="width: 60px">
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading">{{user.user_Name}}</h4>
+					<a href="" class="btn btn-primary"
+						ng-click="addFriend(user.user_Name)">Send Friend Request</a>
+				</div>
+				<hr>
+			</div>
+
+
+		</div>
+		<h1 ng-show="suggestedUsers < 1">No new suggestions</h1>
+		<div class="col-md-4"></div>
+
+	</div>
+</body>
+</html>
